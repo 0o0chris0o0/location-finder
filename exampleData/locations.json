@@ -1,0 +1,81 @@
+[
+  {
+    "name": "Catalyst",
+    "addressDetails": {
+      "addressLine1": "48 Grays Inn Rd",
+      "addressLine2": "Chancery Ln, Holborn",
+      "postCode": "WC1X 8LT",
+      "regionId": "10",
+      "coordinates": {
+          "lat": "51.519751",
+          "lng": "-0.112066"
+      }
+    }
+  },
+  {
+    "name": "The Coffee Bean",
+    "addressDetails": {
+      "addressLine1": "12 Bridge St",
+      "addressLine2": "Tiverton",
+      "postCode": "EX16 5LY",
+      "regionId": "10",
+      "coordinates": {
+          "lat": "50.902904",
+          "lng": "-3.491198"
+      }
+    }
+  },
+  {
+    "name": "Atmos Central Vape/E-Cig & Coffee Lounge",
+    "addressDetails": {
+      "addressLine1": "286 Narborough Rd",
+      "addressLine2": "Leicester",
+      "postCode": "LE3 2AQ",
+      "regionId": "6",
+      "coordinates": {
+          "lat": "52.621309",
+          "lng": "-1.156425"
+      }
+    }
+  },
+  {
+    "name": "Coffee#1 Carmarthen",
+    "addressDetails": {
+      "addressLine1": "Unit 19 St Catherine's Walk",
+      "addressLine2": "Carmarthen",
+      "postCode": "SA31 1GA",
+      "regionId": "8",
+      "coordinates": {
+          "lat": "51.858228",
+          "lng": "-4.309005"
+      }
+    }
+  },
+  {
+    "name": "The Steamie Coffee Roasters",
+    "addressDetails": {
+      "addressLine1": "1024 Argyle St",
+      "addressLine2": "Glasgow",
+      "postCode": "G3 8LX",
+      "regionId": "1",
+      "coordinates": {
+          "lat": "55.864152",
+          "lng": "-4.282145"
+      }
+    }
+  },
+  {
+    "name": "Cornico Coffee Co",
+    "addressDetails": {
+      "addressLine1": "Unit 3/Higher Trevibban Farm",
+      "addressLine2": "Wadebridge",
+      "postCode": "PL27 7SH",
+      "regionId": "1",
+      "coordinates": {
+          "lat": "50.477477",
+          "lng": "-4.943353"
+      }
+    }
+  }
+]
+
