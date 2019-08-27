@@ -13,13 +13,14 @@ export default function getUserBrowserLocation() {
 		};
 
 		const locationError = error => {
-			reject(error);
+      // For demonstration purposes we'll return an example 
+      // location if we can't get the users browser location
+      getUserPosition({ coords: { latitude: 51.527272, longitude: -0.118269 }})
+			// reject(error);
 		};
 
 		if (navigator.geolocation) {
-			// navigator.geolocation.getCurrentPosition(getUserPosition, locationError, { timeout: 30000 });
-      // THIS CODE WONT WORK WITHIN STACKBLITZ, SO FAKING IT...
-      getUserPosition({ coords: { latitude: 51.527272, longitude: -0.118269 }})
+			navigator.geolocation.getCurrentPosition(getUserPosition, locationError, { timeout: 30000 });
 		} else {
 			reject();
 		}

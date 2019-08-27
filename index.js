@@ -32,21 +32,6 @@ class App extends Component {
   async getLocations(postcode) {
     await this.asyncSetState({ status: 'loading' });
 
-    // setTimeout(() => {
-    //   this.setState({
-    //     status: 'success',
-    //     data: {
-    //       shortcode: 1,
-    //       locations: [{
-    //         name: 'Test Coffee Shop',
-    //         distance: '50'
-    //       }]
-    //     }
-    //   });
-    //   const activeCounty = document.querySelector('.county1');
-    //   activeCounty.classList.add('active');
-    // })
-
     // disable the currently active county
     if (document.querySelector(`.active`)){
       document.querySelector(`.active`).classList.remove('active')

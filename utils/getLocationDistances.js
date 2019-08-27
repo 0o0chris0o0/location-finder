@@ -13,15 +13,16 @@ export default function getLocationDistances(userLocation, locations) {
   // clone original array
   const allLocations = locations.slice(0);
 
-  // build array of locations from nearest regions with matching regionId
+  // to reduce API usage, attempt to use locations from nearby regions as opposed to all locations.
+  // build array of locations by filtering for matching nearest regions.
   const nearestLocations = allLocations.filter(
     location => nearestRegions.indexOf(location.addressDetails.regionId) !== -1,
   );
 
   let locationCords;
 
-  // if we have atleast 3 regions then use these to determine nearest courses.
-  // if not we'll use all locations
+  // if we have atleast 3 nearby regions then use these to determine 
+  // nearest locations, if not we'll use all locations
   if (nearestLocations.length >= 3) {
     locationCords = nearestLocations.map(
       location =>
@@ -39,11 +40,11 @@ export default function getLocationDistances(userLocation, locations) {
   const locationData =
     nearestLocations.length >= 3 ? nearestLocations.slice(0) : allLocations.slice(0);
 
-  const key = 'pA6A8uQRmjSEsRrYl4DvWhNGkrMb5CRe';
+  const apiKey = 'pA6A8uQRmjSEsRrYl4DvWhNGkrMb5CRe';
 
   return new Promise((resolve, reject) => {
     axios
-      .post(`https://www.mapquestapi.com/directions/v2/routematrix?key=${key}`, {
+      .post(`https://www.mapquestapi.com/directions/v2/routematrix?key=${apiKey}`, {
         locations: [`${userLocation.lat}, ${userLocation.lng}`, ...locationCords],
         options: {
           manyToOne: true
@@ -56,15 +57,16 @@ export default function getLocationDistances(userLocation, locations) {
         distances.shift();
 
         for (let i = 0; i < distances.length; i++) {
-          // format distance to 1 decimal place
+          // format distance to remove decimal place.
           const formattedDistance = distances[i].toFixed();
           locationData[i].distance = parseFloat(formattedDistance);
         }
 
-        locationData.splice(3)
-
-        // sort locations by closest distance
+        // sort locations by closest distances
         const sortedLocations = sortBy(locationData, 'distance');
+
+        // reduce locations to just show closest 3
+        sortedLocations.splice(3)
 
         resolve(sortedLocations);
       })
