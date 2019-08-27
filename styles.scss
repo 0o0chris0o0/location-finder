@@ -1,6 +1,135 @@
+@import url('https://fonts.googleapis.com/css?family=Livvic:400,600&display=swap');
 
-svg {
-  .active {
-    fill: red;
+
+$blue: #1a535c;
+$green: #4ecdc4;
+$white: #f7fff7;
+$red: #ff6b6b;
+$yellow: #ffe66d;
+
+body {
+  font-family: 'Livvic';
+  background: $green;
+  color: $blue;
+  padding: 10px;
+}
+
+p.subtitle {
+  font-size: 20px;
+}
+
+button {
+  background: $yellow;
+  border: 0;
+  border-radius: 5px;
+  padding: 0 10px;
+  color: black;
+}
+
+form {
+  input {
+    font-size: 16px;
+    padding: 0 5px;
+    line-height: 36px;
+    display: inline-block;
+    vertical-align: middle;
+    border: 1px solid $yellow;
+    border-right: 0;
+    height: 36px;
+    background: none;
+    color: $blue;
+
+    &::placeholder {
+      color: $blue;
+    }
+  }
+
+  button {
+    font-size: 20px;
+    line-height: 30px;
+    height: 38px;
+    border-radius: 0 5px 5px 0;
+    display: inline-block;
+    vertical-align: middle;
   }
 }
+
+.buttons-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  button {
+    margin: 5px;
+  }
+}
+
+button.example-button {
+  font-size: 16px;
+  padding: 0 10px;
+  line-height: 36px;
+}
+
+.results-container {
+  display: flex;
+  align-items: flex-start;
+  margin: 10px 0 0;
+  padding: 10px 0 0;
+  border-top: 1px solid black;
+  min-height: 100px;
+}
+
+.results {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 10px 15px;
+  width: 40%;
+
+  &.temp {
+    opacity: 0.5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.map {
+  width: 60%;
+  height: 500px;
+
+  svg {
+    height: 100%;
+    .active {
+      fill: $red;
+    }
+  }
+}
+
+.location {
+  position: relative;
+
+  &:not(:last-child) {
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+    
+    &:after {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      background: rgba(0, 0, 0, 0.3);
+      content: '';
+      width: 40%;
+      height: 1px;
+    }
+  }
+
+  &__name {
+    margin: 0 0 3px;
+    font-weight: 600;
+  }
+
+  &__distance {
+    margin: 0;
+    font-size: 14px;
+  }
+}
+

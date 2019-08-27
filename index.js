@@ -15,7 +15,7 @@ class App extends Component {
 
     this.state = {
       status: 'idle',
-      data: []
+      data: {}
     };
 
     this.input = React.createRef();
@@ -61,31 +61,47 @@ class App extends Component {
     return (
       <div>
         <h1>Location Finder</h1>
-        <h2>Enter a UK postcode or use one of the options below to find your nearest coffee shop</h2>
-        <form onSubmit={() => this.getLocations(this.input.value)}>
+        <p className="subtitle">Enter a UK postcode or use one of the options below to find your nearest coffee shop</p>
+        <form onSubmit={(e) => {
+          e.preventDefault();
+          this.getLocations(this.input.value)
+          }}>
           <input type="text" placeholder="Postcode" ref={this.input} />
           <button type="submit">Go</button>
           <hr />
         </form>
         <div className="buttons-list">
-          <button onClick={this.getLocations}>
-            Use your browsers location
+          <button className="example-button" onClick={() => this.getLocations(false)}>
+            🌏 Use your browsers location
           </button>
-          <button onClick={() => this.getLocations('LD65AT')}>
+          <button className="example-button" onClick={() => this.getLocations('LD65AT')}>
             Use test postcode from Wales
           </button>
-          <button onClick={() => this.getLocations('EH52 6TP')}>
+          <button className="example-button" onClick={() => this.getLocations('EH52 6TP')}>
             Use test postcode from Scotland
           </button>
-          <button onClick={() => this.getLocations('PL30 5AQ')}>
+          <button className="example-button" onClick={() => this.getLocations('PL30 5AQ')}>
             Use test postcode from Cornwall
           </button>
-          <button onClick={() => this.getLocations('LE1 1GE')}>
+          <button className="example-button" onClick={() => this.getLocations('LE1 1GE')}>
             Use test postcode from Leicester
           </button>
         </div>
-        {status === 'success' && data.locations.map((location) => <Location details={location}/>)}
-        <SVG src={Map} />
+        <div className="results-container">
+          <div className={`results ${status !== 'success' ? 'temp' : ''}`}>
+            {status === 'success' && data.locations.map((location) => <Location details={location}/>)}
+            {
+              status === 'loading' && <span>loading...</span>
+            }
+            {
+              status === 'idle' && <span>results will show here...</span>
+            }
+          </div>
+          <div className="map">
+            <SVG src={Map} />
+          </div>
+        </div>
+   
       </div>
     );
   }
