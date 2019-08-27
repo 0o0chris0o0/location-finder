@@ -5,8 +5,7 @@ React applcation to return the closest set of locations from a given point. An e
 This serves as a simple alternative to using something like Google Maps.
 
 ## Demo 🤓
--  [Demo](https://location-finder.stackblitz.io)
--  [Code explorer on StackBlitz ⚡️](https://stackblitz.com/edit/location-finder)
+-  [Code explorer on StackBlitz](https://stackblitz.com/edit/location-finder) ⚡️
 
 ## Features
 
