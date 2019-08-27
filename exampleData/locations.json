@@ -4,6 +4,7 @@
     "addressDetails": {
       "addressLine1": "48 Grays Inn Rd",
       "addressLine2": "Chancery Ln, Holborn",
+      "city": "London",
       "postCode": "WC1X 8LT",
       "regionId": "10",
       "coordinates": {
@@ -17,6 +18,7 @@
     "addressDetails": {
       "addressLine1": "12 Bridge St",
       "addressLine2": "Tiverton",
+      "city": "Exeter",
       "postCode": "EX16 5LY",
       "regionId": "10",
       "coordinates": {
@@ -30,6 +32,7 @@
     "addressDetails": {
       "addressLine1": "286 Narborough Rd",
       "addressLine2": "Leicester",
+      "city": "Leicester",
       "postCode": "LE3 2AQ",
       "regionId": "6",
       "coordinates": {
@@ -43,6 +46,7 @@
     "addressDetails": {
       "addressLine1": "Unit 19 St Catherine's Walk",
       "addressLine2": "Carmarthen",
+      "city": "Wales",
       "postCode": "SA31 1GA",
       "regionId": "8",
       "coordinates": {
@@ -56,6 +60,7 @@
     "addressDetails": {
       "addressLine1": "1024 Argyle St",
       "addressLine2": "Glasgow",
+      "city": "Glasgow",
       "postCode": "G3 8LX",
       "regionId": "1",
       "coordinates": {

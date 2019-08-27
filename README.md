@@ -2,6 +2,8 @@
 
 React applcation to return the closest set of locations from a given point. An example would be to show the user their nearest coffee shops.
 
+This serves as a simple alternative to using something like Google Maps.
+
 ## Demo 🤓
 -  [Demo](https://location-finder.stackblitz.io)
 -  [Code explorer on StackBlitz ⚡️](https://stackblitz.com/edit/location-finder)

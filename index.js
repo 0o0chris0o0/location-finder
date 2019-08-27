@@ -65,7 +65,7 @@ class App extends Component {
         <form onSubmit={(e) => {
           e.preventDefault();
           this.getLocations(this.input.value)
-          }}>
+        }}>
           <input type="text" placeholder="Postcode" ref={this.input} />
           <button type="submit">Go</button>
           <hr />
@@ -90,12 +90,8 @@ class App extends Component {
         <div className="results-container">
           <div className={`results ${status !== 'success' ? 'temp' : ''}`}>
             {status === 'success' && data.locations.map((location) => <Location details={location}/>)}
-            {
-              status === 'loading' && <span>loading...</span>
-            }
-            {
-              status === 'idle' && <span>results will show here...</span>
-            }
+            {status === 'loading' && <span>loading...</span>}
+            {status === 'idle' && <span>results will show here...</span>}
           </div>
           <div className="map">
             <SVG src={Map} />
